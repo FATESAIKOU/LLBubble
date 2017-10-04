@@ -1,6 +1,8 @@
-#ifndef BOBBLESORT_C
-#define BOBBLESORT_C
+#ifndef BUBBLESORT_C
+#define BUBBLESORT_C
 
+#include <stdio.h>
+#include <stdlib.h>
 #include "Utils.c"
 
 bool sort(Node** head);

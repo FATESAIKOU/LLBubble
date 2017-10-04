@@ -2,12 +2,18 @@
 #include <stdlib.h>
 
 #include "Utils.c"
-#include "BobbleSort.c"
+#include "BubbleSort.c"
 
 int main()
 {
-    Node* test = (Node*)malloc(sizeof(Node));
-    test->val = 1;
-    printf("Hello World: Node val %d\n", test->val);
+    int* nums = createNums(10);
+    for (int i = 0; i < 10; ++i) {
+        printf("%d\n", nums[i]);
+    }
+
+    Node* head = createLinkedList(nums, 10, 9);
+    showList(head, 20);
+
+    printf("Hello World\n");
     return 0;
 }
