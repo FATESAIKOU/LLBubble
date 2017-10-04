@@ -17,7 +17,7 @@ typedef struct __node
 
 
 // Utils for calculation
-bool findLen(Node* head, int** mu, int** lambda);
+bool findLen(Node* head, int* mu, int* lambda);
 
 void link(Node* head, int from, int to);
 
@@ -37,6 +37,57 @@ void showList(Node* head, int len);
 
 // Implement here
 // Cal
+bool findLen(Node *head, int* mu, int* lambda) {
+    if (head == NULL || head->next == NULL) {
+        *mu = (head != NULL) ? 1 : 0;
+        *lambda = 0;
+        return false;
+    } else {
+        Node* t = head->next;
+        Node* h = head->next->next;
+        bool has_cycle = false;
+
+        int tmu = 1;
+        int tlambda = 0;
+        do {
+            ++ tmu;
+            t = t->next;
+            
+            if (h != NULL && h->next != NULL) {
+                h = h->next->next;
+            } else {
+                h = NULL;
+            }
+
+            if (t == h && t != NULL) {
+                has_cycle = true;
+            }
+        } while(t != h);
+
+        if (has_cycle) {
+            // find mu
+            tmu = 0;
+            t = head;
+            while (t != h) {
+                t = t->next;
+                h = h->next;
+                ++ tmu;
+            }
+            
+            // find lambda
+            do {
+                t = t->next;
+                ++ tlambda;
+            } while (t != h);
+        }
+
+        *mu = tmu;
+        *lambda = tlambda;
+
+        return has_cycle;
+    }
+}
+
 void link(Node* head, int from, int to) {
     Node* f_node = NULL;
     Node* t_node = NULL;
