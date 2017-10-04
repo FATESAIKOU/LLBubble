@@ -11,9 +11,10 @@ int main()
         printf("%d\n", nums[i]);
     }
 
-    Node* head = createLinkedList(nums, 10, 9);
+    Node* head = createLinkedList(nums, 10, 0);
     showList(head, 20);
 
+    printf("compare result %s\n", validate(nums, 10, head, 10) ? "true":"false");
     printf("Hello World\n");
     return 0;
 }

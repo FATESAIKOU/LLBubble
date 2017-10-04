@@ -88,6 +88,23 @@ int* createNums(int nums_len) {
     return nums;
 }
 
+bool validate(int* nums, int nums_len, Node* head, int ll_len) {
+    if (nums_len != ll_len) return false;
+
+    Node* cur = head;
+    int i = 0;
+    while (i < nums_len && cur != NULL) {
+        if (nums[i] != cur->val) {
+            return false;
+        } else {
+            ++ i;
+            cur = cur->next;
+        }
+    }
+
+    return true;
+} 
+
 // Display
 void showList(Node* head, int len) {
     Node* nptr = head;
