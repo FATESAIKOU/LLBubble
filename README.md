@@ -1,2 +1,2 @@
-# LLBobble
-Linked List bobble sort
+# LLBubble
+Linked List bubblesort
