@@ -23,6 +23,8 @@ void link(Node* head, int from, int to);
 // Utils for generating testing data
 Node* newNode(int val, Node* next);
 
+void freeList(Node* head, int ll_len);
+
 Node* createLinkedList(int* nums, int nums_len, int loop_at);
 
 int* createNums(int nums_len);
@@ -110,6 +112,19 @@ Node* newNode(int val, Node* next) {
     fac->next = next;
 
     return fac;
+}
+
+void freeList(Node* head, int ll_len) {
+    if (head == NULL) return;
+
+    Node* cur = head;
+    Node* prev = NULL;
+
+    do {
+        free(prev);
+        prev = cur;
+        cur = cur->next;
+    } while (cur != NULL && -- ll_len);
 }
 
 Node* createLinkedList(int* nums, int nums_len, int loop_at) {
