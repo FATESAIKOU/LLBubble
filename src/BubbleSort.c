@@ -7,7 +7,7 @@
 
 bool sort(Node** head);
 
-Node* deepSwap(Node* head, int len);
+Node* floatUp(Node* head, int len);
 
 bool sort(Node** head) {
     int mu, lambda, total_len;
@@ -17,7 +17,7 @@ bool sort(Node** head) {
 
     int now_len = total_len;
     while(now_len) {
-        *head = deepSwap(*head, now_len);
+        *head = floatUp(*head, now_len);
         -- now_len;
     }
 
@@ -25,7 +25,7 @@ bool sort(Node** head) {
         link(*head, total_len - 1, mu - 1);
 }
 
-Node* deepSwap(Node* head, int len) {
+Node* floatUp(Node* head, int len) {
     if (len == 1)
         return head;
     else {
@@ -38,10 +38,10 @@ Node* deepSwap(Node* head, int len) {
         if (a->val > b->val) {
             t = b->next;
             a->next = t;
-            b->next = deepSwap(a, len - 1);
+            b->next = floatUp(a, len - 1);
             return b;
         } else {
-            a->next = deepSwap(b, len - 1);
+            a->next = floatUp(b, len - 1);
             return a;
         }
     }
