@@ -5,11 +5,11 @@
 #include <stdlib.h>
 #include "Utils.c"
 
-bool sort(Node** head);
+void sort(Node** head);
 
 Node* floatUp(Node* head, int len);
 
-bool sort(Node** head) {
+void sort(Node** head) {
     int mu, lambda, total_len;
     bool has_cycle = findLen(*head, &mu, &lambda);
     

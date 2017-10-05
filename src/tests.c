@@ -14,7 +14,7 @@ int main()
     Node* head;
     int mu, lambda, i, j;
     printf("|Len\t|LoopAt\t|Loop?\t|MU\t|lambda\t|test\t|\n");
-    for (i = 0; i < 20; i ++) {
+    for (i = 0; i < 700; i ++) {
         for (j = 0; j <= i; j ++) {
             nums = createNums(i);
             head = createLinkedList(nums, i, j);
