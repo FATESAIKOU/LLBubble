@@ -6,21 +6,21 @@
 
 int main()
 {
-    /*
     int* nums = createNums(10);
     for (int i = 0; i < 10; ++i) {
         printf("%d\n", nums[i]);
     }
 
-    Node* head = createLinkedList(nums, 10, 9);
+    Node* head = createLinkedList(nums, 10, 5);
+    sort(&head);
     showList(head, 20);
 
     int mu, lambda;
     printf("has loop: %s,", findLen(head, &mu, &lambda) ? "true":"false");
     printf(" mu: %d, lambda: %d\n", mu, lambda);
     printf("compare result %s\n", validate(nums, 10, head, 10) ? "true":"false");
-    */
 
+    /*
     int* nums;
     Node* head;
     int mu, lambda, i, j;
@@ -33,6 +33,7 @@ int main()
             printf("%d\t|%d\n", mu, lambda);
         }
     }
+    */
 
     printf("Hello World\n");
     return 0;

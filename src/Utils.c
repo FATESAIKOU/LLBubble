@@ -15,7 +15,6 @@ typedef struct __node
     struct __node* next;
 } Node;
 
-
 // Utils for calculation
 bool findLen(Node* head, int* mu, int* lambda);
 
@@ -32,7 +31,6 @@ bool validate(int* nums, int nums_len, Node* head, int ll_len);
 
 // Utils for displaying
 void showList(Node* head, int len);
-
 
 
 // Implement here
