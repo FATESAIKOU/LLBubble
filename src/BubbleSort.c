@@ -21,8 +21,9 @@ void sort(Node** head) {
         -- now_len;
     }
 
-    if (has_cycle)
-        link(*head, total_len - 1, mu - 1);
+    if (has_cycle) {
+        link(*head, total_len - 1, mu);
+    }
 }
 
 Node* floatUp(Node* head, int len) {

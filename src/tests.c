@@ -12,9 +12,9 @@ int main()
 {
     int* nums;
     Node* head;
-    int mu, lambda, i, j;
-    printf("|Len\t|LoopAt\t|Loop?\t|MU\t|lambda\t|test\t|\n");
-    for (i = 0; i < 700; i ++) {
+    int mu, lambda, mu2, lambda2, i, j;
+    printf("|Len\t|LoopAt\t|Loop?\t|MU\t|lambda\t|findLen test\t|sort test\t|\n");
+    for (i = 0; i < 4; i ++) {
         for (j = 0; j <= i; j ++) {
             nums = createNums(i);
             head = createLinkedList(nums, i, j);
@@ -24,7 +24,10 @@ int main()
             // Sort
             qsort(nums, i, sizeof(int), cmp);
             sort(&head);
-            printf("|%s\t|\n", validate(nums, i, head, mu + lambda) ? "passed":"failed");
+
+            findLen(head, &mu2, &lambda2);
+            printf("|%s\t\t", (mu == mu2 && lambda == lambda2) ? "\x1B[32mpassed\x1B[37m":"\x1B[31mfailed\x1B[37m");
+            printf("|%s\t\t|\n", validate(nums, i, head, mu + lambda) ? "\x1B[32mpassed\x1B[37m":"\x1B[31mfailed\x1B[37m");
 
             freeList(head, mu + lambda);
             free(nums);
