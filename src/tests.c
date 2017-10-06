@@ -13,8 +13,8 @@ int main()
     int* nums;
     Node* head;
     int mu, lambda, mu2, lambda2, i, j;
-    printf("|Len\t|LoopAt\t|Loop?\t|MU\t|lambda\t|findLen test\t|sort test\t|\n");
-    for (i = 0; i < 4; i ++) {
+    printf("|Len\t|LoopAt\t|Loop?\t|MU\t|lambda\t|link test\t|sort test\t|\n");
+    for (i = 0; i < 6; i ++) {
         for (j = 0; j <= i; j ++) {
             nums = createNums(i);
             head = createLinkedList(nums, i, j);
